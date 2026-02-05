@@ -57,7 +57,7 @@ echo "Step 2: Upgrading all installed packages"
 echo "=================================================="
 echo ""
 echo "This may take a few minutes..."
-$PYTHON_CMD -m pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 $PYTHON_CMD -m pip install --upgrade || {
+$PYTHON_CMD -m pip list --outdated | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 $PYTHON_CMD -m pip install --upgrade || {
     echo -e "${YELLOW}⚠${NC} Some packages may have failed to upgrade (this is often OK)"
 }
 echo -e "${GREEN}✓${NC} Packages upgraded"
